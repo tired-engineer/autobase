@@ -37,6 +37,7 @@
   when:
     - consul_raw_key is not defined
     - bootstrap_state.stat.exists | bool
+  delegate_to: 127.0.0.1
 
 - name: Delete gossip encryption key file
   ansible.builtin.file:
